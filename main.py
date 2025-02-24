@@ -25,17 +25,19 @@ screen.onkey(player.move, "Up")
 game_speed = INITIAL_GAME_SPEED
 game_running = True
 while game_running:
-    time.sleep(game_speed)
-    screen.update()
 
     car_manager.move_cars()
 
     if car_manager.check_collision(player.position()):
         scoreboard.game_over()
         game_running = False
-    elif player.ycor() >= FINISH_LINE_Y:
+
+    if player.ycor() >= FINISH_LINE_Y:
         scoreboard.increase_score()
         player.goto_start()
         game_speed *= GAME_SPEED_INCREASE
+
+    time.sleep(game_speed)
+    screen.update()
 
 screen.exitonclick()

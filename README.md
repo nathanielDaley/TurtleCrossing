@@ -1,7 +1,9 @@
 # Turtle Crossing  
 
 A game reminiscent of the arcade classic *Frogger*. Move your turtle to the other edge of the 
-screen without getting squished!  
+screen without getting squished!
+
+Proud to have created this in under an hour.
 
 ## Controls  
 - **Up Arrow**: Move the turtle up  

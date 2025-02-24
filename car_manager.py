@@ -36,12 +36,13 @@ class CarManager:
     def check_collision(self, position):
         collision = False
         for car in self.cars:
-            car_top_y = car.ycor() + 20
-            car_bottom_y = car.ycor() - 20
-            car_right_x = car.xcor() + 10
-            car_left_x = car.xcor() - 10
+            car_top_y = car.ycor() + 10
+            car_bottom_y = car.ycor() - 10
+            car_right_x = car.xcor() + 20
+            car_left_x = car.xcor() - 20
             if (car_left_x <= position[0] <= car_right_x
                     and car_top_y >= position[1] >= car_bottom_y):
+                print(f"{car_left_x}, {car_right_x}, {car_top_y}, {car_bottom_y}, {position[0]}, {position[1]}")
                 collision = True
 
         return collision
